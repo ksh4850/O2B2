@@ -39,15 +39,15 @@ public class MemberDB {
 	     
 	     try {
 	         
-	         if(new File("C:/miniDB/miniDB.txt").exists()) // 저장할 파일 위치 임닌다 마지막 텍스트 
+	         if(new File("/kshmini/src/miniDB.txt").exists()) // 저장할 파일 위치 임닌다 마지막 텍스트 
 	         {
 	          
-	          fos = new FileOutputStream("C:/miniDB/miniDB.txt", true);    
+	          fos = new FileOutputStream("/kshmini/src/miniDB.txt", true);    
 	          oos = new MyOutputStream(fos);
 	         }else
 	         {
 	        
-	          fos = new FileOutputStream("C:/miniDB/miniDB.txt", true);    
+	          fos = new FileOutputStream("/kshmini/src/miniDB.txt", true);    
 	          oos = new ObjectOutputStream(fos);
 	         }
 	      
@@ -92,15 +92,15 @@ public class MemberDB {
 	     
 	     try {
 	         
-	         if(new File("C:/miniDB/miniDB.txt").exists()) // 저장할 파일 위치 임닌다 마지막 텍스트 
+	         if(new File("/kshmini/src/miniDB.txt").exists()) // 저장할 파일 위치 임닌다 마지막 텍스트 
 	         {
 	          
-	          fos = new FileOutputStream("C:/miniDB/miniDB.txt");    
+	          fos = new FileOutputStream("/kshmini/src/miniDB.txt");    
 	          oos = new ObjectOutputStream(fos);
 	         }else
 	         {
 	        
-	          fos = new FileOutputStream("C:/miniDB/miniDB.txt");    
+	          fos = new FileOutputStream("/kshmini/src/miniDB.txt");    
 	          oos = new ObjectOutputStream(fos);
 	         }
 	      
@@ -148,7 +148,7 @@ public class MemberDB {
 		
 		
 		try {
-			fis = new FileInputStream(new File("C:/miniDB/miniDB.txt")); 
+			fis = new FileInputStream(new File("/kshmini/src/miniDB.txt")); 
 			ois = new ObjectInputStream(fis);
 			ojt = ois;
 			
