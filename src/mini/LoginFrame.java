@@ -17,28 +17,15 @@ public class LoginFrame {
 	private JTextField loginIdT;
 	private JPasswordField loginPwdT;
 	
-
-
-	public static void main(String[] args) {
-		LoginFrame jf = new LoginFrame();
-		MemberDB memberDB = new MemberDB();
-		memberDB.loadingDBMethod();
-		System.out.println(memberDB.getListDB());
-//		
-		jf.initialize1(); 
-
-	}
-	
-	
 	public void initialize1() {
 		MemberManager memberManager = new MemberManager();
 		
 		JFrame1 logframe = new JFrame1();
-		ImagePanel panel1 = new ImagePanel(new ImageIcon("C:/image/1.jpg").getImage());
+		ImagePanel panel1 = new ImagePanel(new ImageIcon("/src/Images/1.jpg").getImage());
 		logframe.add(panel1);
 		logframe.pack();
 		
-
+		
 		
 		loginIdT = new JTextField();
 		loginIdT.setBounds(95, 487, 568, 62);
@@ -52,7 +39,7 @@ public class LoginFrame {
 		
 		
 		JButton loginBtn = new JButton("");
-		loginBtn.setIcon(new ImageIcon("C:\\버튼이미지\\로그인.jpg"));
+		loginBtn.setIcon(new ImageIcon("src/buttonImages/로그인.jpg"));
 		loginBtn.setBounds(98, 660, 565, 62);
 		panel1.add(loginBtn);
 		loginBtn.addActionListener(new ActionListener() {	//로그인버튼
@@ -65,7 +52,7 @@ public class LoginFrame {
 		});
 		
 		JButton loginJoinBtn = new JButton("");
-		loginJoinBtn.setIcon(new ImageIcon("C:\\버튼이미지\\새계정만들기.jpg"));
+		loginJoinBtn.setIcon(new ImageIcon("src/buttonImages/새계정만들기.jpg"));
 		loginJoinBtn.setBounds(95, 744, 178, 23);
 		panel1.add(loginJoinBtn);
 		loginJoinBtn.addActionListener(new ActionListener() {	//회원가입 버튼
@@ -83,7 +70,7 @@ public class LoginFrame {
 	public void initialize2() {
 		
 		JFrame1 logframe = new JFrame1();
-		ImagePanel panel2 = new ImagePanel(new ImageIcon("C:/image/2.jpg").getImage());
+		ImagePanel panel2 = new ImagePanel(new ImageIcon("/src/Images/2.jpg").getImage());
 		logframe.add(panel2);
 		logframe.pack();
 		
@@ -96,7 +83,7 @@ public class LoginFrame {
 		
 		JButton homeRevBtn = new JButton("");
 		homeRevBtn.setForeground(Color.BLACK);
-		homeRevBtn.setIcon(new ImageIcon("C:\\버튼이미지\\예약하기.jpg"));
+		homeRevBtn.setIcon(new ImageIcon("/src/buttonImages/예약하기.jpg"));
 		homeRevBtn.setBounds(101, 638, 254, 50);
 		panel2.add(homeRevBtn);
 		homeRevBtn.addActionListener(new ActionListener() {	//예약하기 버튼
@@ -110,7 +97,7 @@ public class LoginFrame {
 		
 		
 		JButton homeinfoBtn = new JButton("");
-		homeinfoBtn.setIcon(new ImageIcon("C:\\버튼이미지\\개인정보확인.png"));
+		homeinfoBtn.setIcon(new ImageIcon("/src/buttonImages/개인정보확인.png"));
 		homeinfoBtn.setBounds(392, 631, 254, 62);
 		panel2.add(homeinfoBtn);
 		homeinfoBtn.addActionListener(new ActionListener() {
@@ -125,7 +112,7 @@ public class LoginFrame {
 		
 		
 		JButton homeLogoutBtn = new JButton("");
-		homeLogoutBtn.setIcon(new ImageIcon("C:\\버튼이미지\\h로그아웃.jpg"));
+		homeLogoutBtn.setIcon(new ImageIcon("/src/buttonImages/h로그아웃.jpg"));
 		homeLogoutBtn.setBounds(101, 698, 154, 37);
 		panel2.add(homeLogoutBtn);
 		homeLogoutBtn.addActionListener(new ActionListener() {
