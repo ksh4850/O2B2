@@ -45,7 +45,7 @@ public class ResvervationFrame implements ItemListener {
 	public void initialize6() {
 		
 		JFrame1 rveframe = new JFrame1();
-		ImagePanel panel6 = new ImagePanel(new ImageIcon("C:/image/61.jpg").getImage());
+		ImagePanel panel6 = new ImagePanel(new ImageIcon("src/images/61.jpg").getImage());
 		rveframe.add(panel6);
 		rveframe.pack();
 		
@@ -61,7 +61,7 @@ public class ResvervationFrame implements ItemListener {
 		
 		
 		JButton revHomeBtn = new JButton("");
-		revHomeBtn.setIcon(new ImageIcon("C:\\버튼이미지\\홈버튼.png"));
+		revHomeBtn.setIcon(new ImageIcon("src/buttonImages/홈버튼.png"));
 		revHomeBtn.setBounds(1193, 30, 49, 42);
 		panel6.add(revHomeBtn);
 		revHomeBtn.addActionListener(new ActionListener() {  //홈버튼
@@ -76,7 +76,7 @@ public class ResvervationFrame implements ItemListener {
 		});
 		
 		JButton revResvervationBtn = new JButton("New button");
-		revResvervationBtn.setIcon(new ImageIcon("C:\\버튼이미지\\예약하기.jpg"));
+		revResvervationBtn.setIcon(new ImageIcon("src/buttonImages/예약하기.jpg"));
 		revResvervationBtn.setBounds(1272, 802, 252, 49);
 		panel6.add(revResvervationBtn);
 		revResvervationBtn.addActionListener(new ActionListener() {  //예약하기 버튼
@@ -146,13 +146,13 @@ public class ResvervationFrame implements ItemListener {
 		
 		boolean is = false;
 		if(is) {
-			ImagePanel panel9 = new ImagePanel(new ImageIcon("C:/image/9.jpg").getImage());
+			ImagePanel panel9 = new ImagePanel(new ImageIcon("src/images/9.jpg").getImage());
 			frame.add(panel9);		
 			frame.pack();
 			
 			
 			JButton revnoBtn = new JButton("New button");
-			revnoBtn.setIcon(new ImageIcon("C:\\버튼이미지\\아니요.png"));
+			revnoBtn.setIcon(new ImageIcon("src/buttonImages/아니요.png"));
 			revnoBtn.setBounds(898, 486, 177, 53);
 			panel9.add(revnoBtn);
 			revnoBtn.addActionListener(new ActionListener() {
@@ -166,7 +166,7 @@ public class ResvervationFrame implements ItemListener {
 			
 			
 			JButton revyesBtn = new JButton("New button");
-			revyesBtn.setIcon(new ImageIcon("C:\\버튼이미지\\예.png"));
+			revyesBtn.setIcon(new ImageIcon("src/buttonImages/예.png"));
 			revyesBtn.setBounds(572, 486, 185, 53);
 			panel9.add(revyesBtn);
 			revyesBtn.addActionListener(new ActionListener() {
@@ -179,12 +179,12 @@ public class ResvervationFrame implements ItemListener {
 			});
 			
 		}else {
-			ImagePanel panel10 = new ImagePanel(new ImageIcon("C:/image/10.jpg").getImage());
+			ImagePanel panel10 = new ImagePanel(new ImageIcon("src/images/10.jpg").getImage());
 			frame.add(panel10);
 			frame.pack();
 			
 			JButton rvenoBtn1 = new JButton("New button");
-			rvenoBtn1.setIcon(new ImageIcon("C:\\버튼이미지\\예.png"));
+			rvenoBtn1.setIcon(new ImageIcon("src/buttonImages/예.png"));
 			rvenoBtn1.setBounds(731, 484, 184, 49);
 			panel10.add(rvenoBtn1);
 			rvenoBtn1.addActionListener(new ActionListener() {

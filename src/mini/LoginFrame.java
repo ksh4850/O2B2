@@ -21,7 +21,7 @@ public class LoginFrame {
 		MemberManager memberManager = new MemberManager();
 		
 		JFrame1 logframe = new JFrame1();
-		ImagePanel panel1 = new ImagePanel(new ImageIcon("/src/Images/1.jpg").getImage());
+		ImagePanel panel1 = new ImagePanel(new ImageIcon("src/Images/1.jpg").getImage());
 		logframe.add(panel1);
 		logframe.pack();
 		
@@ -70,7 +70,7 @@ public class LoginFrame {
 	public void initialize2() {
 		
 		JFrame1 logframe = new JFrame1();
-		ImagePanel panel2 = new ImagePanel(new ImageIcon("/src/Images/2.jpg").getImage());
+		ImagePanel panel2 = new ImagePanel(new ImageIcon("src/Images/2.jpg").getImage());
 		logframe.add(panel2);
 		logframe.pack();
 		
@@ -97,7 +97,7 @@ public class LoginFrame {
 		
 		
 		JButton homeinfoBtn = new JButton("");
-		homeinfoBtn.setIcon(new ImageIcon("/src/buttonImages/개인정보확인.png"));
+		homeinfoBtn.setIcon(new ImageIcon("src/buttonImages/개인정보확인.png"));
 		homeinfoBtn.setBounds(392, 631, 254, 62);
 		panel2.add(homeinfoBtn);
 		homeinfoBtn.addActionListener(new ActionListener() {
@@ -112,7 +112,7 @@ public class LoginFrame {
 		
 		
 		JButton homeLogoutBtn = new JButton("");
-		homeLogoutBtn.setIcon(new ImageIcon("/src/buttonImages/h로그아웃.jpg"));
+		homeLogoutBtn.setIcon(new ImageIcon("src/buttonImages/h로그아웃.jpg"));
 		homeLogoutBtn.setBounds(101, 698, 154, 37);
 		panel2.add(homeLogoutBtn);
 		homeLogoutBtn.addActionListener(new ActionListener() {

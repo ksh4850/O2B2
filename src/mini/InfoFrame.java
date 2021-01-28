@@ -47,7 +47,7 @@ public class InfoFrame {
 		
 		JFrame1 infoframe = new JFrame1();
 		MemberManager memberManager = new MemberManager();
-		ImagePanel panel4 = new ImagePanel(new ImageIcon("C:/image/4.jpg").getImage());
+		ImagePanel panel4 = new ImagePanel(new ImageIcon("src/images/4.jpg").getImage());
 		infoframe.add(panel4);		
 		infoframe.pack();
 		
@@ -100,7 +100,7 @@ public class InfoFrame {
 		memberManager.Info();
 		
 		JButton infoHomeBtn = new JButton(); //홈버튼
-		infoHomeBtn.setIcon(new ImageIcon("C:\\버튼이미지\\홈버튼.png"));
+		infoHomeBtn.setIcon(new ImageIcon("src/buttonImages/홈버튼.png"));
 		infoHomeBtn.setBounds(1274, 21, 70, 54);
 		panel4.add(infoHomeBtn);
 		infoHomeBtn.addActionListener(new ActionListener() { //비번변경 전 정보확인창 가는 버튼
@@ -130,7 +130,7 @@ public class InfoFrame {
 		
 		
 		JButton pwdchBtn = new JButton();		//pwd 변경버튼
-		pwdchBtn.setIcon(new ImageIcon("C:\\버튼이미지\\비밀번호 변경.png"));
+		pwdchBtn.setIcon(new ImageIcon("src/buttonImages/비밀번호 변경.png"));
 		pwdchBtn.setBounds(492, 736, 192, 29);
 		panel4.add(pwdchBtn);
 		pwdchBtn.addActionListener(new ActionListener() { //비번변경 전 정보확인창 가는 버튼
@@ -143,7 +143,7 @@ public class InfoFrame {
 		
 		
 		JButton memberDelBtn = new JButton();	//회원탈퇴 버튼
-		memberDelBtn.setIcon(new ImageIcon("C:\\버튼이미지\\회원탈퇴.png"));
+		memberDelBtn.setIcon(new ImageIcon("src/buttonImages/회원탈퇴.png"));
 		memberDelBtn.setBounds(913, 736, 129, 29);
 		panel4.add(memberDelBtn);
 		memberDelBtn.addActionListener(new ActionListener() { //회원탈퇴 가는 버튼
@@ -156,7 +156,7 @@ public class InfoFrame {
 		
 		
 		JButton cancelBookBtn = new JButton(""); //예약확인 버튼
-		cancelBookBtn.setIcon(new ImageIcon("C:\\버튼이미지\\예약취소.png"));
+		cancelBookBtn.setIcon(new ImageIcon("src/buttonImages/버튼이미지/예약취소.png"));
 		cancelBookBtn.setBounds(971, 632, 143, 59);
 		panel4.add(cancelBookBtn);
 		cancelBookBtn.addActionListener(new ActionListener() { //회원탈퇴 가는 버튼
@@ -175,12 +175,12 @@ public class InfoFrame {
 	public void initialize5() {// 회원탈퇴
 		JFrame1 infoframe = new JFrame1();
 
-		ImagePanel panel5 = new ImagePanel(new ImageIcon("C:/image/5.jpg").getImage());
+		ImagePanel panel5 = new ImagePanel(new ImageIcon("src/images/5.jpg").getImage());
 		infoframe.add(panel5);
 		infoframe.pack();
 		
 		JButton pwdYes = new JButton("");
-		pwdYes.setIcon(new ImageIcon("C:\\버튼이미지\\예.png"));
+		pwdYes.setIcon(new ImageIcon("src/buttonImages/예.png"));
 		pwdYes.setBounds(530, 487, 211, 67);
 		panel5.add(pwdYes);
 		
@@ -197,7 +197,7 @@ public class InfoFrame {
 		
 		
 		JButton pwdNo = new JButton("");
-		pwdNo.setIcon(new ImageIcon("C:\\버튼이미지\\아니요.png"));
+		pwdNo.setIcon(new ImageIcon("src/buttonImages/아니요.png"));
 		pwdNo.setBounds(845, 487, 211, 67);
 		panel5.add(pwdNo);
 		
@@ -214,7 +214,7 @@ public class InfoFrame {
 	
 	public void initialize7() {  // 비번호변경 전 정보확인
 		JFrame1 infoframe = new JFrame1();
-		ImagePanel panel7 = new ImagePanel(new ImageIcon("C:/image/7.jpg").getImage());
+		ImagePanel panel7 = new ImagePanel(new ImageIcon("src/images/7.jpg").getImage());
 		infoframe.add(panel7);	
 		infoframe.pack();
 		
@@ -232,7 +232,7 @@ public class InfoFrame {
 		
 		
 		JButton infoCkBtn = new JButton("");
-		infoCkBtn.setIcon(new ImageIcon("C:\\버튼이미지\\개인정보확인.png"));
+		infoCkBtn.setIcon(new ImageIcon("src/buttonImages/개인정보확인.png"));
 		infoCkBtn.setBounds(599, 526, 380, 74);
 		panel7.add(infoCkBtn);
 		
@@ -259,7 +259,7 @@ public class InfoFrame {
 	public void initialize8() { // 비번변경 
 		
 		JFrame1 infoframe = new JFrame1();
-		ImagePanel panel8 = new ImagePanel(new ImageIcon("C:/image/8.jpg").getImage());
+		ImagePanel panel8 = new ImagePanel(new ImageIcon("src/images/8.jpg").getImage());
 		infoframe.add(panel8);
 		infoframe.pack();
 		
@@ -274,7 +274,7 @@ public class InfoFrame {
 		infoPwdChT2.setColumns(20);
 		
 		JButton pwdchbtn1 = new JButton(""); //비번 변경 버튼 
-		pwdchbtn1.setIcon(new ImageIcon("C:\\버튼이미지\\비밀번호변경확인.jpg"));
+		pwdchbtn1.setIcon(new ImageIcon("src/buttonImages/비밀번호변경확인.jpg"));
 		pwdchbtn1.setBounds(617, 533, 371, 62);
 		panel8.add(pwdchbtn1);
 		pwdchbtn1.addActionListener(new ActionListener() {

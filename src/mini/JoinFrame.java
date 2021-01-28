@@ -116,7 +116,7 @@ public class JoinFrame  {
 		
 		
 		JButton joinHomeBtn = new JButton("");	//홈버튼
-		joinHomeBtn.setIcon(new ImageIcon("/src/buttonImages/홈버튼.png"));
+		joinHomeBtn.setIcon(new ImageIcon("src/buttonImages/홈버튼.png"));
 		joinHomeBtn.setBounds(1503, 27, 70, 54);
 		panel3.add(joinHomeBtn);
 		joinHomeBtn.addActionListener(new ActionListener() {
@@ -128,7 +128,7 @@ public class JoinFrame  {
 	
 		
 		JButton idCheck = new JButton("");		//중복확인버튼
-		idCheck.setIcon(new ImageIcon("/src/buttonImages/중복확인.jpg"));
+		idCheck.setIcon(new ImageIcon("src/buttonImages/중복확인.jpg"));
 		idCheck.setBounds(672, 290, 90, 59);
 		panel3.add(idCheck);
 		idCheck.addActionListener(new ActionListener() {
@@ -140,7 +140,7 @@ public class JoinFrame  {
 	
 	
 		JButton joinBtn = new JButton("");		//회원가입 버튼
-		joinBtn.setIcon(new ImageIcon("/src/buttonImages/회원가입.jpg"));
+		joinBtn.setIcon(new ImageIcon("src/buttonImages/회원가입.jpg"));
 		joinBtn.setBounds(832, 727, 379, 68);
 		panel3.add(joinBtn);
 		joinBtn.addActionListener(new ActionListener() {

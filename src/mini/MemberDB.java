@@ -39,7 +39,7 @@ public class MemberDB {
 	     
 	     try {
 	         
-	         if(new File("/src/miniDB.txt").exists()) // 저장할 파일 위치 임닌다 마지막 텍스트 
+	         if(new File("src/miniDB.txt").exists()) // 저장할 파일 위치 임닌다 마지막 텍스트 
 	         {
 	          
 	          fos = new FileOutputStream("src/miniDB.txt", true);    
