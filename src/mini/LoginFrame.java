@@ -42,10 +42,15 @@ public class LoginFrame {
 		loginBtn.setIcon(new ImageIcon("src/buttonImages/로그인.jpg"));
 		loginBtn.setBounds(98, 660, 565, 62);
 		panel1.add(loginBtn);
+		
+		
 		loginBtn.addActionListener(new ActionListener() {	//로그인버튼
 			public void actionPerformed(ActionEvent e) {
 				if(memberManager.login(loginIdT.getText(), loginPwdT.getText())) {
+					
 				logframe.setVisible(false);
+				
+				
 				initialize2();
 				}
 			}
