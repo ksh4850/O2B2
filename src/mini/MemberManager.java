@@ -74,50 +74,66 @@ public class MemberManager {
 	public boolean login(String id, String pwd) { // 로그인
 
 		boolean login = false;
+		boolean master = false;
 
-		for (int i = 0; i < MemberDB.listDB.size(); i++) {
+		for (int i = 1; i < MemberDB.listDB.size(); i++) {
 
 			// ArrayList 에 저장한 회원정보에서 아이디 비교
 //				0번 인덱스는 미리 가입해둔 마스터 계정 => 마스터 계정 로그인 화면 출력
 
-			if (i == 0) { // 0번 인덱스에 마스터 계정 생성
-				if (id.equals(MemberDB.listDB.get(0).getId()) && pwd.equals(MemberDB.listDB.get(0).getPwd())) {
-					JOptionPane.showInternalMessageDialog(null, "마스터 계정에서 로그인 되었습니다.");
-					login = true;
-					MemberManager.memberNumber = i;
-					break;
-				}
-				if (id.equals(MemberDB.listDB.get(0).getId()) && !pwd.equals(MemberDB.listDB.get(0).getPwd())) {
-					JOptionPane.showInternalMessageDialog(null, "마스터 계정에서 비밀번호가 틀렸습니다.");
-					break;
-				}
-				if (id.isBlank() || pwd.isBlank()) {
-					JOptionPane.showMessageDialog(null, "아이디 혹은 비밀번호가 공란입니다. 확인 후 다시 로그인 해주세요.");
-
-				}
-			} else {
-				if (id.equals(MemberDB.listDB.get(i).getId()) && pwd.equals(MemberDB.listDB.get(i).getPwd())) {
-					MemberManager.memberNumber = i;
-					login = true;
-					break;
-				}
-				if (id.equals(MemberDB.listDB.get(i).getId()) && !pwd.equals(MemberDB.listDB.get(i).getPwd())) {
-					JOptionPane.showMessageDialog(null, "비밀번호가 틀렸습니다. 다시 확인해주세요.");
-					break;
-				}
-				if (!id.equals(MemberDB.listDB.get(i).getId())) {
-					JOptionPane.showMessageDialog(null, "가입된 아이디가 없습니다. 회원가입 후 이용해주세요.");
-					break;
-				}
-				if (id.isBlank() || pwd.isBlank()) {
-					JOptionPane.showMessageDialog(null, "아이디 혹은 비밀번호가 공란입니다. 확인 후 다시 로그인 해주세요.");
-
-				}
+			if (id.equals(MemberDB.listDB.get(i).getId()) && pwd.equals(MemberDB.listDB.get(i).getPwd())) {
+				MemberManager.memberNumber = i;
+				login = true;
+				break;
+			}
+			if (id.equals(MemberDB.listDB.get(i).getId()) && !pwd.equals(MemberDB.listDB.get(i).getPwd())) {
+				JOptionPane.showMessageDialog(null, "비밀번호가 틀렸습니다. 다시 확인해주세요.");
+				break;
+			}
+			if (!id.equals(MemberDB.listDB.get(i).getId())) {
+				JOptionPane.showMessageDialog(null, "가입된 아이디가 없습니다. 회원가입 후 이용해주세요.");
+				break;
+			}
+			if (id.isBlank() || pwd.isBlank()) {
+				JOptionPane.showMessageDialog(null, "아이디 혹은 비밀번호가 공란입니다. 확인 후 다시 로그인 해주세요.");
 
 			}
 
 		}
 		return login;
+	}
+
+	public boolean loginM(String id, String pwd) { // 로그인
+
+		boolean master = false;
+
+		if (id.isBlank() || pwd.isBlank()) {
+			JOptionPane.showMessageDialog(null, "아이디 혹은 비밀번호가 공란입니다. 확인 후 다시 로그인 해주세요.");
+
+		}
+
+		// ArrayList 에 저장한 회원정보에서 아이디 비교
+//				0번 인덱스는 미리 가입해둔 마스터 계정 => 마스터 계정 로그인 화면 출력
+
+		// 0번 인덱스에 마스터 계정 생성
+		if (id.equals(MemberDB.listDB.get(0).getId()) && pwd.equals(MemberDB.listDB.get(0).getPwd())) {
+			JOptionPane.showInternalMessageDialog(null, "마스터 계정에서 로그인 되었습니다.");
+
+			master = true;
+			MemberManager.memberNumber = 0;
+
+		}
+		if (id.equals(MemberDB.listDB.get(0).getId()) && !pwd.equals(MemberDB.listDB.get(0).getPwd())) {
+			JOptionPane.showInternalMessageDialog(null, "마스터 계정에서 비밀번호가 틀렸습니다.");
+
+		}
+		if (id.isBlank() || pwd.isBlank()) {
+			JOptionPane.showMessageDialog(null, "아이디 혹은 비밀번호가 공란입니다. 확인 후 다시 로그인 해주세요.");
+
+		}
+
+		return master;
+
 	}
 
 	public void Info() {
