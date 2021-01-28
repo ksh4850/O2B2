@@ -15,25 +15,15 @@ import javax.swing.JTextField;
 public class JoinFrame  {
 	
 	
-	private JTextField joinIdText ;
-	private JPasswordField joinPwdText1;
-	private JPasswordField joinPwdText2;
-	private JTextField joinNameText;
+	private JTextField joinIdField ;
+	private JPasswordField joinPwdField;
+	private JPasswordField joinPwd2Field;
+	private JTextField joinNameField;
 	private String joinGender;
 	private JTextField joinBirthText;
 	private JTextField joinAdrrText;
 	
 	
-	public static void main(String[] args) {
-		JoinFrame jf = new JoinFrame();
-		MemberDB memberDB = new MemberDB();
-		memberDB.loadingDBMethod();
-//		System.out.println(memberDB.getListDB());
-//		
-		jf.initialize3();
-
-	}
-
 	public void initialize3() {
 		
 		
@@ -44,31 +34,31 @@ public class JoinFrame  {
 		joinframe.pack();
 		
 		
-		joinIdText = new JTextField();
-		joinIdText.setBounds(403, 290, 257, 55);
-		panel3.add(joinIdText);
-		joinIdText.setColumns(10);
+		joinIdField = new JTextField();
+		joinIdField.setBounds(403, 290, 257, 55);
+		panel3.add(joinIdField);
+		joinIdField.setColumns(10);
 		
 		
 	
 		
 				
-		joinPwdText1 = new JPasswordField();
-		joinPwdText1.setBounds(403, 442, 371, 59);
-		panel3.add(joinPwdText1);
-		joinPwdText1.setColumns(10);
+		joinPwdField = new JPasswordField();
+		joinPwdField.setBounds(403, 442, 371, 59);
+		panel3.add(joinPwdField);
+		joinPwdField.setColumns(10);
 
 		
-		joinPwdText2 = new JPasswordField();
-		joinPwdText2.setBounds(403, 565, 371, 55);
-		panel3.add(joinPwdText2);
-		joinPwdText2.setColumns(10);
+		joinPwd2Field = new JPasswordField();
+		joinPwd2Field.setBounds(403, 565, 371, 55);
+		panel3.add(joinPwd2Field);
+		joinPwd2Field.setColumns(10);
 
 		
-		joinNameText = new JTextField();
-		joinNameText.setBounds(832, 290, 379, 59);
-		panel3.add(joinNameText);
-		joinNameText.setColumns(10);
+		joinNameField = new JTextField();
+		joinNameField.setBounds(832, 290, 379, 59);
+		panel3.add(joinNameField);
+		joinNameField.setColumns(10);
 
 		
 		joinBirthText = new JTextField();
@@ -144,7 +134,7 @@ public class JoinFrame  {
 		idCheck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				memberManager.idCheck(joinIdText.getText());
+				memberManager.idCheck(joinIdField.getText());
 			}
 		});
 	
@@ -156,8 +146,8 @@ public class JoinFrame  {
 		joinBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				if(memberManager.pwdCheck(joinPwdText1.getText(),joinPwdText2.getText()) && memberManager.birthDateCheck(joinBirthText.getText())) {
-					memberManager.Join(joinIdText.getText(), joinPwdText1.getText(), joinNameText.getText(), joinAdrrText.getText(), joinBirthText.getText(), joinGender);;
+				if(memberManager.pwdCheck(joinPwdField.getText(),joinPwd2Field.getText()) && memberManager.birthDateCheck(joinBirthText.getText())) {
+					memberManager.Join(joinIdField.getText(), joinPwdField.getText(), joinNameField.getText(), joinAdrrText.getText(), joinBirthText.getText(), joinGender);;
 					joinframe.setVisible(false);
 					LoginFrame loginFrame = new LoginFrame();
 					loginFrame.initialize1();
