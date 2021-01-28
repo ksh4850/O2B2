@@ -88,7 +88,7 @@ public class LoginFrame {
 		
 		JButton homeRevBtn = new JButton("");
 		homeRevBtn.setForeground(Color.BLACK);
-		homeRevBtn.setIcon(new ImageIcon("/src/buttonImages/예약하기.jpg"));
+		homeRevBtn.setIcon(new ImageIcon("src/buttonImages/예약하기.jpg"));
 		homeRevBtn.setBounds(101, 638, 254, 50);
 		panel2.add(homeRevBtn);
 		homeRevBtn.addActionListener(new ActionListener() {	//예약하기 버튼
