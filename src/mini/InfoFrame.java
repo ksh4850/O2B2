@@ -78,12 +78,12 @@ public class InfoFrame {
 		infoRevDateL.setBounds(491, 640, 150, 50);
 		panel4.add(infoRevDateL);
 		
-		JLabel infoRevTimeL = new JLabel("12312");
+		JLabel infoRevTimeL = new JLabel(MemberDB.listDB.get(MemberManager.memberNumber).getRevTime());
 		infoRevTimeL.setFont(new Font("굴림", Font.BOLD, 20));
 		infoRevTimeL.setBounds(651, 640, 150, 50);
 		panel4.add(infoRevTimeL);
 		
-		JLabel infoRevPriceL = new JLabel(MemberDB.listDB.get(MemberManager.memberNumber).getPrice() + "");
+		JLabel infoRevPriceL = new JLabel(MemberDB.listDB.get(MemberManager.memberNumber).getPrice()  + "원");
 		infoRevPriceL.setFont(new Font("굴림", Font.BOLD, 20));
 		infoRevPriceL.setBounds(811, 640, 150, 50);
 		panel4.add(infoRevPriceL);

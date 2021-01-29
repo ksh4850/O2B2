@@ -145,8 +145,11 @@ public class JoinFrame  {
 		panel3.add(joinBtn);
 		joinBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				if(memberManager.pwdCheck(joinPwdField.getText(),joinPwd2Field.getText()) && memberManager.birthDateCheck(joinBirthText.getText())) {
+
+				if(memberManager.blankCheck(joinIdField.getText(), joinPwdField.getText(), joinNameField.getText(), joinAdrrText.getText(), joinBirthText.getText())
+						&& memberManager.pwdCheck(joinPwdField.getText(),joinPwd2Field.getText()) 
+						&& memberManager.birthDateCheck(joinBirthText.getText())) {
+					
 					memberManager.Join(joinIdField.getText(), joinPwdField.getText(), joinNameField.getText(), joinAdrrText.getText(), joinBirthText.getText(), joinGender);;
 					joinframe.setVisible(false);
 					LoginFrame loginFrame = new LoginFrame();

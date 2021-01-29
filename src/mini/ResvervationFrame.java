@@ -54,13 +54,111 @@ public class ResvervationFrame implements ItemListener {
 		revMemberL.setBounds(1272, 40, 224, 32);
 		panel6.add(revMemberL);
 		
-//		rvePriceL = new JLabel();
+		rvePriceL = new JLabel();
 		rvePriceL.setFont(new Font("굴림", Font.BOLD, 20));
 		rvePriceL.setBounds(1406, 662, 119, 32);
 		panel6.add(rvePriceL);
 		
 		
-		JButton revHomeBtn = new JButton("");
+		//============================미용가격 체크 박스 버튼 ========================
+		JCheckBox[] revPriceCk = new JCheckBox[7]; 
+		
+		for(int i = 0 ; i < 7 ; i++) {
+			revPriceCk[i] = new JCheckBox("");
+			panel6.add(revPriceCk[i]);
+		}
+		revPriceCk[0].setBounds(1231, 213, 21, 23);
+		revPriceCk[1].setBounds(1231, 261, 21, 23);
+		revPriceCk[2].setBounds(1232, 305, 21, 23);
+		revPriceCk[3].setBounds(1231, 360, 21, 23);
+		revPriceCk[4].setBounds(1232, 409, 21, 23);
+		revPriceCk[5].setBounds(1232, 459, 21, 23);
+		revPriceCk[6].setBounds(1232, 506, 21, 23);
+		
+		int[] price = {10 , 30, 25, 110, 110, 70, 130};		
+		
+		for(int i = 0 ; i < revPriceCk.length ; i++) {
+			
+		revPriceCk[i].addItemListener(new ItemListener() {	
+			
+			
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				int sum  = 0;
+				for(int i = 0 ; i < revPriceCk.length ; i++) {
+						
+					if(revPriceCk[i].isSelected()) {
+						sum += price[i];
+					}
+				}
+				
+//				System.out.println(sum);
+				rvePriceL.setText(sum + ",000원");
+				revPrice = sum;
+			}
+				
+			});
+		}
+		
+		//============================예약시간 라디오 버튼 ==============================
+		ButtonGroup group = new ButtonGroup();
+		JRadioButton[] rveTimebtn = new JRadioButton[6];
+		
+		for(int i = 0 ; i < rveTimebtn.length ; i++) {
+			rveTimebtn[i] = new JRadioButton("");
+			group.add(rveTimebtn[i]);
+			panel6.add(rveTimebtn[i]);
+			
+		}
+		
+		rveTimebtn[0].setBounds(387, 707, 22, 23);
+		rveTimebtn[1].setBounds(611, 707, 22, 23);
+		rveTimebtn[2].setBounds(840, 707, 22, 23);
+		rveTimebtn[3].setBounds(387, 781, 22, 23);
+		rveTimebtn[4].setBounds(611, 781, 22, 23);
+		rveTimebtn[5].setBounds(840, 781, 22, 23);
+		
+
+		for(int i = 0 ; i < rveTimebtn.length ; i++) {
+			
+		rveTimebtn[i].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				if(rveTimebtn[0].isSelected()) {
+					rveTimebtn[0].setActionCommand("10시"); 
+					
+				}else if(rveTimebtn[1].isSelected()) {
+					rveTimebtn[1].setActionCommand("11시");
+					
+				}else if(rveTimebtn[2].isSelected()) {
+					rveTimebtn[2].setActionCommand("12시");
+					
+				}else if(rveTimebtn[3].isSelected()) {
+					rveTimebtn[3].setActionCommand("2시");
+					
+				}else if(rveTimebtn[4].isSelected()) {
+					rveTimebtn[4].setActionCommand("3시");
+					
+				}else if(rveTimebtn[5].isSelected()) {
+					rveTimebtn[5].setActionCommand("4시");
+				}
+					
+				revTime = group.getSelection().getActionCommand();
+//				System.out.println(revTime);
+				
+			}
+		});
+		
+		}
+//		System.out.println(revTime);
+		
+
+		//==================================홈 버튼==============================
+		
+		JButton revHomeBtn = new JButton();
 		revHomeBtn.setIcon(new ImageIcon("src/buttonImages/홈버튼.png"));
 		revHomeBtn.setBounds(1193, 30, 49, 42);
 		panel6.add(revHomeBtn);
@@ -75,61 +173,26 @@ public class ResvervationFrame implements ItemListener {
 			}
 		});
 		
-		JButton revResvervationBtn = new JButton("New button");
+		//==================================예약하기 버튼=========================== 
+		
+		JButton revResvervationBtn = new JButton();
 		revResvervationBtn.setIcon(new ImageIcon("src/buttonImages/예약하기.jpg"));
 		revResvervationBtn.setBounds(1272, 802, 252, 49);
 		panel6.add(revResvervationBtn);
 		revResvervationBtn.addActionListener(new ActionListener() {  //예약하기 버튼
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(sum);
+				System.out.println(revPrice);
+				System.out.println(revTime);
+//				System.out.println(rvePriceL.getText());
 				
 				MemberManager membermanager = new MemberManager();
-				membermanager.resvervation(sum);
-				System.out.println(rvePriceL.getText());
-				sum = 0;
+				
+				initialize9(membermanager.resvervation(revPrice ,revTime));
 				rveframe.setVisible(false);
-				initialize9();
+				revPrice = 0;
 				
 			}
 		});
-		
-
-		for(int i = 0 ; i < 7 ; i++) {
-			revPriceCk[i] = new JCheckBox("");
-			panel6.add(revPriceCk[i]);
-		}
-		revPriceCk[0].setBounds(1231, 213, 21, 23);
-		revPriceCk[1].setBounds(1231, 261, 21, 23);
-		revPriceCk[2].setBounds(1232, 305, 21, 23);
-		revPriceCk[3].setBounds(1231, 360, 21, 23);
-		revPriceCk[4].setBounds(1232, 409, 21, 23);
-		revPriceCk[5].setBounds(1232, 459, 21, 23);
-		revPriceCk[6].setBounds(1232, 506, 21, 23);
-	
-		revPriceCk[0].addItemListener(this);
-		revPriceCk[1].addItemListener(this);
-		revPriceCk[2].addItemListener(this);
-		revPriceCk[3].addItemListener(this);
-		revPriceCk[4].addItemListener(this);
-		revPriceCk[5].addItemListener(this);
-		revPriceCk[6].addItemListener(this);
-		
-//		System.out.println(sum);
-		
-		//=====================================================
-		
-		
-		for(int i = 0 ; i < 6 ; i++) {
-			rveTimeck[i] = new JCheckBox("");
-			panel6.add(rveTimeck[i]);
-		}
-		
-//		rveTimeck[0].setBounds(388, 710, 21, 23);
-//		rveTimeck[1].setBounds(609, 710, 21, 23);
-//		rveTimeck[2].setBounds(838, 710, 21, 23);
-//		rveTimeck[3].setBounds(388, 778, 21, 23);
-//		rveTimeck[4].setBounds(609, 778, 21, 23);
-//		rveTimeck[5].setBounds(838, 778, 21, 23);
 		
 
 		
@@ -202,50 +265,6 @@ public class ResvervationFrame implements ItemListener {
 		
 	}
 
-	@Override
-	public void itemStateChanged(ItemEvent e) {
-//		int sum1 = 0 ;
-//		int sum2 = 0;
-		if(e.getStateChange() == ItemEvent.SELECTED) {
-			if(e.getItem() == revPriceCk[0]) {
-				sum += 10;
-			}else if(e.getItem() == revPriceCk[1]) {
-				sum += 30;
-			}else if(e.getItem() == revPriceCk[2]) {
-				sum += 25;
-			}else if(e.getItem() == revPriceCk[3]) {
-				sum += 110;
-			}else if(e.getItem() == revPriceCk[4]) {
-				sum += 110;
-			}else if(e.getItem() == revPriceCk[5]) {
-				sum += 70;
-			}else if(e.getItem() == revPriceCk[6]) {
-				sum += 130;
-			}
-//			System.out.println(sum);
-		}else {
-			if(e.getItem() == revPriceCk[0]) {
-				sum -= 10;
-			}else if(e.getItem() == revPriceCk[1]) {
-				sum -= 30;
-			}else if(e.getItem() == revPriceCk[2]) {
-				sum -= 25;
-			}else if(e.getItem() == revPriceCk[3]) {
-				sum -= 110;
-			}else if(e.getItem() == revPriceCk[4]) {
-				sum -= 110;
-			}else if(e.getItem() == revPriceCk[5]) {
-				sum -= 70;
-			}else if(e.getItem() == revPriceCk[6]) {
-				sum -= 130;
-			}
-			
-		}
-		
-		rvePriceL.setText(sum + ",000원");
-		
-		
-		
-	}
+
 
 }

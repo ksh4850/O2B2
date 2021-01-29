@@ -42,6 +42,31 @@ public class MemberManager {
 		}
 //			
 	}
+	
+	public boolean blankCheck(String id , String pwd, String name,String adrr,String birthDate) {
+		
+		boolean isTrue = false;
+		if (id.isBlank() || pwd.isBlank() || name.isBlank() || adrr.isBlank() || birthDate.isBlank() ) {
+			
+			if(id.isBlank()) {
+				JOptionPane.showInternalMessageDialog(null, "아이디가 공란입니다. 입력후 회원가입해주세요.");
+			}else if(pwd.isBlank()) {
+				JOptionPane.showInternalMessageDialog(null, "비밀번호가 공란입니다. 입력후 회원가입해주세요.");
+			}else if(name.isBlank()) {
+				JOptionPane.showInternalMessageDialog(null, "이름이 공란입니다. 입력후 회원가입해주세요.");
+			}else if(adrr.isBlank()) {
+				JOptionPane.showInternalMessageDialog(null, "주소가 공란입니다. 입력후 회원가입해주세요.");
+			}else {
+				JOptionPane.showInternalMessageDialog(null, "생년월일이 공란입니다. 입력후 회원가입해주세요.");
+			}
+			
+		}else {
+			isTrue = true;
+		}
+		
+		
+		return isTrue;
+	}
 
 	public boolean pwdCheck(String pwd1, String pwd2) { // 비번체크
 
@@ -211,6 +236,41 @@ public class MemberManager {
 		;
 		memberDB.informationChang();
 		System.out.println(MemberDB.listDB.get(MemberManager.memberNumber));
+
+	}
+	
+	public boolean resvervation(int revPrice ,String revTime) {
+
+		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+		String revDate = date.format(new Date());
+		MemberDB memberDB = new MemberDB();
+		
+		boolean isTrue = true;
+		
+		for(int i = 0 ; i < MemberDB.listDB.size() ; i++) {
+			
+			
+			if(MemberDB.listDB.get(i).getRevTime().equals(revTime)){
+				isTrue = false;
+				System.out.println("예약있음");
+			}
+		}
+			
+			if(isTrue){
+				System.out.println("예약없음");
+				MemberDB.listDB.get(MemberManager.memberNumber).setRevDate(revDate);
+				MemberDB.listDB.get(MemberManager.memberNumber).setRevTime(revTime);
+				MemberDB.listDB.get(MemberManager.memberNumber).setPrice(revPrice * 1000);
+				
+				memberDB.informationChang();
+//				System.out.println("변경되값 " + MemberDB.listDB.get(MemberManager.memberNumber));
+				memberDB.loadingDBMethod();
+//				System.out.println("변경후 로딩 :" + MemberDB.listDB.get(MemberManager.memberNumber));
+				
+			}
+			
+		
+		return isTrue;
 
 	}
 
